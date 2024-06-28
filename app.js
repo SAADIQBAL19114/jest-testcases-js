@@ -12,8 +12,8 @@ app.use('/post', postRouter)
 
 // ---------Listen Function---------
 
-app.listen({ port: 2000 }, async () => {
+app.listen({ port: 2001 }, async () => {
     console.log("the server is running in http://localhost:2000");
-    await sequelize.sync({alter:true})
+    await sequelize.authenticate()
     console.log("Data base connected");
 })
