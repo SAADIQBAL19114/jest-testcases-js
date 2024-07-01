@@ -6,9 +6,9 @@ afterAll(async () => {
   await models.sequelize.close();
 });
 
-describe('Get all users', () => {
+describe('Get all posts', () => {
   it('Should return array of users.', async () => {
-    let res = await request(app).get('/user');
+    let res = await request(app).get('/post');
     expect(res.status).toBe(200);
     expect(res.body.length).toBeGreaterThanOrEqual(0);
     expect(Array.isArray(res.body)).toBeTruthy();
@@ -34,7 +34,6 @@ describe('Get User by id', () => {
     expect(res.error).toEqual(expect.any(Error));
   });
 });
-
 
 describe('Create a user', () => {
   it('should return a success message when a user is created', async () => {
@@ -91,7 +90,6 @@ describe('Update user details for the given uuid', () => {
 });
 
 describe('Delete the user record for given id', () => {
-
   it("Should return error if id doesn't exist.", async () => {
     let res = await request(app).delete(
       '/user/id/95f93b16-c481-4589-ba0b-3267dd1b2d50',

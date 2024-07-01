@@ -3,7 +3,9 @@ const { body, check, validationResult } = require('express-validator');
 const validatorFunction = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(422).json({ errors: errors.array() });
+    return res
+      .status(400)
+      .json({ message: 'Invalid Input Data', error: errors.array() });
   } else next();
 };
 

@@ -8,7 +8,7 @@ module.exports = {
       'users',
       [
         {
-          uuid: uuidv4(),
+          uuid: '7bf6ee45-f804-472e-a9c7-5e6612f74fce',
           name: 'John Doe',
           email: 'john@example.com',
           role: 'user',
@@ -16,7 +16,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          uuid: uuidv4(),
+          uuid: 'ab14e583-0522-416a-9d51-08170d58809b',
           name: 'Jane Smith',
           email: 'jane@example.com',
           role: 'admin',
